@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrimeBuild Estates | Premium Real Estate</title>
+<style>
+:root{--gold:#d4af61;--black:#080808;--panel:#151515;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:var(--black);color:var(--white)}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:100;background:#101010;border-bottom:1px solid #806b3e;padding:17px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:bold;color:var(--gold)}
+nav{display:flex;gap:17px;flex-wrap:wrap}
+nav a{
+    font-size:13px;
+    color:#eee;
+    padding:10px 13px;
+    border-radius:6px;
+    transition:background .25s ease,color .25s ease;
+}
+nav a:hover,
+nav a.active{
+    background:#0066ff;
+    color:#fff;
+    box-shadow:0 0 12px rgba(0,102,255,.35);
+}
+.hero{min-height:580px;background:linear-gradient(90deg,#000d,#0005),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800') center/cover;display:flex;align-items:center;padding:8%}
+.hero-content{max-width:700px}
+.hero h1{font-size:55px;color:var(--gold);margin-bottom:20px}
+.hero p{font-size:18px;line-height:1.8;margin-bottom:25px}
+.btn{display:inline-block;background:var(--gold);color:#000;padding:13px 23px;border:0;border-radius:4px;font-weight:bold;margin:5px}
+.btn:hover{background:#fff}
+section.page{display:none;padding:55px 6%;min-height:70vh}
+section.page.active{display:block}
+.heading{text-align:center;color:var(--gold);font-size:35px;margin-bottom:35px}
+.subheading{color:var(--gold);margin:25px 0 15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid #39332a;border-radius:8px;overflow:hidden}
+.card img{width:100%;height:210px;object-fit:cover}
+.card-body{padding:18px}
+.card h3{color:var(--gold);margin-bottom:12px}
+.card p{color:#ccc;line-height:1.6;margin-bottom:10px}
+.muted{color:#aaa;line-height:1.8}
+.form-box{max-width:850px;margin:auto;background:#151515;padding:30px;border:1px solid #55482e;border-radius:9px}
+input,select,textarea{width:100%;padding:13px;margin:8px 0 17px;background:#222;color:white;border:1px solid #555;border-radius:4px}
+input[type=file]{padding:10px}
+label{color:var(--gold);display:block;margin-top:8px}
+textarea{min-height:110px;resize:vertical}
+.property-image{width:100%;height:200px;object-fit:cover}
+.info{background:#171717;padding:25px;border-left:3px solid var(--gold);margin:20px 0;line-height:1.8}
+footer{text-align:center;background:#050505;border-top:1px solid #806b3e;padding:35px;color:#aaa;line-height:2}
+footer strong{color:var(--gold)}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:7px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin:25px 0}
+.stat{background:#202020;padding:25px;text-align:center;border:1px solid #66532f}
+.stat h2{color:var(--gold);font-size:30px}
+.detail-image{width:100%;max-height:450px;object-fit:cover;border-radius:8px}
+#menu{display:none}
+.small{font-size:12px;color:#aaa}
+button.danger{background:#a83232;color:white;border:0;padding:9px}
+button.edit{background:#333;color:white;border:1px solid var(--gold);padding:9px}
+@media(max-width:750px){
+header{align-items:flex-start;flex-direction:column}
+nav{gap:12px}
+.hero h1{font-size:38px}
+.hero{min-height:470px}
+section.page{padding:35px 5%}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">PRIMEBUILD ESTATES</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#properties">Properties</a>
+<a href="#buy">Buy</a>
+<a href="#sell">Sell</a>
+<a href="#rent">Rent</a>
+<a href="#commercial">Commercial</a>
+<a href="#residential">Residential</a>
+<a href="#gallery">Gallery</a>
+<a href="#projects">Projects</a>
+<a href="#location">Location</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+<a href="#login">Login</a>
+<a href="#signup">Sign Up</a>
+<a href="#admin">Admin</a>
+</nav>
+</header>
+
+<!-- 1 HOME PAGE -->
+<section class="page active" id="home">
+<div class="hero">
+<div class="hero-content">
+<h1>Find Your Dream Property</h1>
+<p>Welcome to PrimeBuild Estates. Discover luxury homes, premium residential plots and commercial properties. Your dream property starts here.</p>
+<a class="btn" href="#properties">Explore Properties</a>
+<a class="btn" href="tel:8299742290">Call Now</a>
+</div>
+</div>
+<div style="padding:55px 0">
+<h2 class="heading">Welcome To PrimeBuild Estates</h2>
+<div class="grid">
+<div class="info">Luxury Residential Properties</div>
+<div class="info">Premium Commercial Properties</div>
+<div class="info">Trusted Property Services</div>
+</div>
+</div>
+</section>
+
+<!-- 2 ABOUT US -->
+<section class="page" id="about">
+<h1 class="heading">About Us</h1>
+<div class="info">
+<h2 class="subheading">PrimeBuild Estates</h2>
+<p>PrimeBuild Estates is a real estate company dedicated to helping customers buy, sell and rent properties. Our aim is to provide reliable property information, transparent dealings and quality customer service.</p>
+<p>We deal in residential plots, houses, apartments, commercial properties and investment opportunities.</p>
+</div>
+<h2 class="subheading">Our Mission</h2>
+<p class="muted">To make property buying and selling easier, transparent and convenient for every customer.</p>
+<h2 class="subheading">Our Vision</h2>
+<p class="muted">To build a trusted name in the real estate industry.</p>
+</section>
+
+<!-- 3 PROPERTIES PAGE -->
+<section class="page" id="properties">
+<h1 class="heading">All Properties</h1>
+<input id="searchProperty" placeholder="Search by property name or location..." oninput="renderProperties()">
+<select id="filterType" onchange="renderProperties()">
+<option value="">All Property Types</option>
+<option>Residential</option><option>Commercial</option><option>Plot</option><option>Apartment</option><option>House</option>
+</select>
+<div class="grid" id="propertyList"></div>
+</section>
+
+<!-- 4 BUY PROPERTY -->
+<section class="page" id="buy">
+<h1 class="heading">Buy Property</h1>
+<div class="info">Find your ideal property. Browse available properties and contact our team directly.</div>
+<div class="grid" id="buyList"></div>
+</section>
+
+<!-- 5 SELL PROPERTY -->
+<section class="page" id="sell">
+<h1 class="heading">Sell Your Property</h1>
+<div class="form-box">
+<h2 class="subheading">Submit Your Property Details</h2>
+<form id="sellForm">
+<label>Owner Name</label><input name="owner" required placeholder="Enter full name">
+<label>Phone Number</label><input name="phone" required type="tel" pattern="[0-9]{10}" placeholder="10 digit mobile number">
+<label>Property Title</label><input name="title" required placeholder="Enter property name">
+<label>Property Type</label><select name="type"><option>Residential</option><option>Commercial</option><option>Plot</option><option>Apartment</option><option>House</option></select>
+<label>Property Location</label><input name="location" required placeholder="City, area, address">
+<label>Property Price</label><input name="price" required placeholder="Enter expected price">
+<label>Property Area</label><input name="area" placeholder="e.g. 1500 sq ft">
+<label>Bedrooms</label><input name="bedrooms" type="number" min="0">
+<label>Bathrooms</label><input name="bathrooms" type="number" min="0">
+<label>Property Description</label><textarea name="description" required placeholder="Full details about the property"></textarea>
+<label>Upload Property Photos</label><input type="file" name="photos" accept="image/*" multiple>
+<label>Upload Property Video</label><input type="file" name="video" accept="video/*">
+<button class="btn" type="submit">Submit Property</button>
+</form>
+</div>
+</section>
+
+<!-- 6 RENT PROPERTY -->
+<section class="page" id="rent">
+<h1 class="heading">Properties For Rent</h1>
+<div class="grid" id="rentList"></div>
+</section>
+
+<!-- 7 COMMERCIAL -->
+<section class="page" id="commercial">
+<h1 class="heading">Commercial Properties</h1>
+<p class="muted">Explore offices, shops, showrooms, commercial buildings and business spaces.</p>
+<div class="grid" id="commercialList"></div>
+</section>
+
+<!-- 8 RESIDENTIAL -->
+<section class="page" id="residential">
+<h1 class="heading">Residential Properties</h1>
+<p class="muted">Explore residential plots, luxury villas, houses and apartments.</p>
+<div class="grid" id="residentialList"></div>
+</section>
+
+<!-- 9 PROPERTY DETAILS -->
+<section class="page" id="details">
+<h1 class="heading">Property Details</h1>
+<div id="propertyDetails"></div>
+</section>
+
+<!-- 10 GALLERY -->
+<section class="page" id="gallery">
+<h1 class="heading">Property Gallery</h1>
+<div class="grid gallery-grid" id="galleryList"></div>
+</section>
+
+<!-- 11 PROJECTS -->
+<section class="page" id="projects">
+<h1 class="heading">Our Projects</h1>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"><div class="card-body"><h3>Luxury Living Project</h3><p>Premium residential development.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"><div class="card-body"><h3>Commercial Development</h3><p>Modern commercial spaces.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800"><div class="card-body"><h3>Modern Homes</h3><p>Comfortable modern residential spaces.</p></div></div>
+</div>
+</section>
+
+<!-- 12 LOCATION AND MAP -->
+<section class="page" id="location">
+<h1 class="heading">Location & Map</h1>
+<div class="info">
+<h2 class="subheading">PrimeBuild Estates</h2>
+<p>Contact us to get the exact location of your desired property.</p>
+<a href="https://www.google.com/maps" target="_blank" class="btn">Open Google Maps</a>
+</div>
+</section>
+
+<!-- 13 SERVICES -->
+<section class="page" id="services">
+<h1 class="heading">Our Services</h1>
+<div class="grid">
+<div class="info"><h3 class="subheading">Property Buying</h3><p>Find properties according to your needs.</p></div>
+<div class="info"><h3 class="subheading">Property Selling</h3><p>List and advertise your property.</p></div>
+<div class="info"><h3 class="subheading">Property Renting</h3><p>Find rental houses and commercial spaces.</p></div>
+<div class="info"><h3 class="subheading">Commercial Property</h3><p>Shops, offices and business spaces.</p></div>
+<div class="info"><h3 class="subheading">Property Consultation</h3><p>Get assistance with property enquiries.</p></div>
+<div class="info"><h3 class="subheading">Site Visits</h3><p>Contact our team to arrange property visits.</p></div>
+</div>
+</section>
+
+<!-- 14 CONTACT -->
+<section class="page" id="contact">
+<h1 class="heading">Contact Us</h1>
+<div class="form-box">
+<h2 class="subheading">PRIMEBUILD ESTATES</h2>
+<p class="muted">For Property Enquiry, Buying, Selling and Booking</p>
+<h2 style="color:var(--gold);margin:25px 0">Phone: 8299742290</h2>
+<a href="tel:8299742290" class="btn">Call Now</a>
+<hr style="margin:30px 0;border-color:#55482e">
+<form id="contactForm">
+<label>Your Name</label><input name="name" required placeholder="Full Name">
+<label>Phone Number</label><input name="phone" required type="tel" pattern="[0-9]{10}" placeholder="Mobile Number">
+<label>Email Address</label><input name="email" type="email" placeholder="Email">
+<label>Enquiry Type</label>
+<select name="enquiry"><option>Buy Property</option><option>Sell Property</option><option>Rent Property</option><option>Commercial Property</option><option>Other</option></select>
+<label>Message</label><textarea name="message" required placeholder="Write your enquiry"></textarea>
+<button class="btn">Submit Enquiry</button>
+</form>
+</div>
+</section>
+
+<!-- 15 SIGNUP -->
+<section class="page" id="signup">
+<h1 class="heading">Create Account</h1>
+<div class="form-box">
+<form id="signupForm">
+<label>Full Name</label><input name="name" required>
+<label>Phone Number</label><input name="phone" required type="tel" pattern="[0-9]{10}">
+<label>Email</label><input name="email" required type="email">
+<label>Password</label><input name="password" required type="password" minlength="6">
+<label>Confirm Password</label><input name="confirm" required type="password">
+<button class="btn">Sign Up</button>
+<p class="muted">Already have an account? <a href="#login" style="color:var(--gold)">Login</a></p>
+</form>
+</div>
+</section>
+
+<!-- 15 LOGIN -->
+<section class="page" id="login">
+<h1 class="heading">Login</h1>
+<div class="form-box">
+<form id="loginForm">
+<label>Email</label><input name="email" type="email" required>
+<label>Password</label><input name="password" type="password" required>
+<button class="btn">Login</button>
+</form>
+</div>
+</section>
+
+<!-- 16 ADMIN DASHBOARD -->
+<section class="page" id="admin">
+<h1 class="heading">Admin Dashboard</h1>
+<div class="form-box" id="adminLogin">
+<h2 class="subheading">Admin Login</h2>
+<label>Admin Password</label>
+<input id="adminPassword" type="password" placeholder="Enter admin password">
+<button class="btn" onclick="adminAccess()">Login To Dashboard</button>
+<p class="small">Demo password: Prime@123</p>
+</div>
+<div id="adminPanel" style="display:none">
+<div class="stats">
+<div class="stat"><h2 id="totalProperties">0</h2><p>Properties</p></div>
+<div class="stat"><h2 id="totalUsers">0</h2><p>Users</p></div>
+<div class="stat"><h2 id="totalEnquiries">0</h2><p>Enquiries</p></div>
+</div>
+<h2 class="subheading">Add New Property</h2>
+<div class="form-box">
+<form id="adminPropertyForm">
+<label>Property Title</label><input name="title" required>
+<label>Property Type</label><select name="type"><option>Residential</option><option>Commercial</option><option>Plot</option><option>Apartment</option><option>House</option></select>
+<label>Purpose</label><select name="purpose"><option>Buy</option><option>Rent</option></select>
+<label>Price</label><input name="price" required>
+<label>Location</label><input name="location" required>
+<label>Area</label><input name="area">
+<label>Bedrooms</label><input name="bedrooms" type="number">
+<label>Bathrooms</label><input name="bathrooms" type="number">
+<label>Description</label><textarea name="description"></textarea>
+<label>Property Photos</label><input type="file" name="photos" accept="image/*" multiple>
+<label>Property Video</label><input type="file" name="video" accept="video/*">
+<button class="btn">Publish Property</button>
+</form>
+</div>
+<h2 class="subheading">Manage Properties</h2>
+<div id="adminProperties" class="grid"></div>
+<h2 class="subheading">Customer Enquiries</h2>
+<div id="adminEnquiries"></div>
+<h2 class="subheading">Registered Users</h2>
+<div id="adminUsers"></div>
+<button class="btn" onclick="adminLogout()">Logout Admin</button>
+</div>
+</section>
+
+<!-- 17 PRIVACY -->
+<section class="page" id="privacy">
+<h1 class="heading">Privacy Policy</h1>
+<div class="info">
+<h3 class="subheading">Information Collection</h3>
+<p>We collect information submitted through registration, property listings and enquiry forms.</p>
+<h3 class="subheading">Information Usage</h3>
+<p>Information is used to respond to enquiries and provide property services.</p>
+<h3 class="subheading">Data Protection</h3>
+<p>We take reasonable steps to protect submitted information. Do not submit passwords or sensitive financial information through this demo website.</p>
+<h3 class="subheading">Contact</h3>
+<p>Phone: 8299742290</p>
+</div>
+</section>
+
+<!-- 18 TERMS -->
+<section class="page" id="terms">
+<h1 class="heading">Terms & Conditions</h1>
+<div class="info">
+<h3 class="subheading">Website Usage</h3>
+<p>Users must provide accurate information while submitting enquiries and property details.</p>
+<h3 class="subheading">Property Information</h3>
+<p>Property information, images, prices and availability must be verified before any transaction.</p>
+<h3 class="subheading">User Responsibility</h3>
+<p>Users are responsible for verifying ownership, documents, approvals and legal status of properties.</p>
+<h3 class="subheading">Contact</h3>
+<p>PrimeBuild Estates - 8299742290</p>
+</div>
+</section>
+
+<footer>
+<strong>PRIMEBUILD ESTATES</strong>
+<p>Luxury | Trust | Excellence</p>
+<p>Phone: 8299742290</p>
+<a href="#privacy">Privacy Policy</a> |
+<a href="#terms">Terms & Conditions</a> |
+<a href="#contact">Contact Us</a>
+<p>© 2026 PrimeBuild Estates. All Rights Reserved.</p>
+</footer>
+
+<script>
+const DB={
+get(key,def=[]){try{return JSON.parse(localStorage.getItem(key))||def}catch(e){return def}},
+set(key,val){localStorage.setItem(key,JSON.stringify(val))}
+};
+let properties=DB.get("pbe_properties");
+let users=DB.get("pbe_users");
+let enquiries=DB.get("pbe_enquiries");
+let currentUser=DB.get("pbe_session",null);
+
+function saveAll(){
+DB.set("pbe_properties",properties);
+DB.set("pbe_users",users);
+DB.set("pbe_enquiries",enquiries);
+}
+function escapeHTML(s){
+return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function navigate(){
+let id=location.hash.slice(1)||"home";
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+let page=document.getElementById(id);
+if(!page)page=document.getElementById("home");
+page.classList.add("active");
+
+/* Click kiya hua navigation option blue block mein dikhega */
+document.querySelectorAll("nav a").forEach(link=>{
+    link.classList.toggle("active",link.getAttribute("href")==="#"+id);
+});
+
+window.scrollTo(0,0);
+renderProperties();
+if(id==="admin")renderAdmin();
+}
+window.addEventListener("hashchange",navigate);
+navigate();
+
+function imageHTML(p){
+return p.images&&p.images.length?
+`<img src="${p.images[0]}" alt="${escapeHTML(p.title)}">`:
+`<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Property">`;
+}
+function propertyCard(p){
+return `<div class="card">${imageHTML(p)}
+<div class="card-body">
+<h3>${escapeHTML(p.title)}</h3>
+<p>Type: ${escapeHTML(p.type)}</p>
+<p>Location: ${escapeHTML(p.location)}</p>
+<p>Price: ${escapeHTML(p.price)}</p>
+<a class="btn" href="#details" onclick="showDetails('${p.id}')">View Details</a>
+<a class="btn" href="tel:8299742290">Call Now</a>
+</div></div>`;
+}
+function renderProperties(){
+let q=(document.getElementById("searchProperty")?.value||"").toLowerCase();
+let t=document.getElementById("filterType")?.value||"";
+let filtered=properties.filter(p=>(p.title+" "+p.location).toLowerCase().includes(q)&&(!t||p.type===t));
+document.getElementById("propertyList").innerHTML=filtered.map(propertyCard).join("")||"<p>No properties available.</p>";
+document.getElementById("buyList").innerHTML=properties.filter(p=>p.purpose==="Buy").map(propertyCard).join("")||"<p>No properties available.</p>";
+document.getElementById("rentList").innerHTML=properties.filter(p=>p.purpose==="Rent").map(propertyCard).join("")||"<p>No rental properties available.</p>";
+document.getElementById("commercialList").innerHTML=properties.filter(p=>p.type==="Commercial").map(propertyCard).join("")||"<p>No commercial properties available.</p>";
+document.getElementById("residentialList").innerHTML=properties.filter(p=>p.type!=="Commercial").map(propertyCard).join("")||"<p>No residential properties available.</p>";
+document.getElementById("galleryList").innerHTML=properties.flatMap(p=>(p.images||[]).map(src=>`<img src="${src}" alt="Property photo">`)).join("")||"<p>No uploaded photos yet.</p>";
+}
+function showDetails(id){
+let p=properties.find(x=>x.id===id);
+if(!p)return;
+document.getElementById("propertyDetails").innerHTML=`
+<div class="form-box">
+<h2 class="subheading">${escapeHTML(p.title)}</h2>
+${(p.images||[]).map(src=>`<img class="detail-image" src="${src}">`).join("")}
+${p.video?`<video controls style="width:100%;margin:15px 0"><source src="${p.video}"></video>`:""}
+<div class="info">
+<p><b>Property Type:</b> ${escapeHTML(p.type)}</p>
+<p><b>Purpose:</b> ${escapeHTML(p.purpose)}</p>
+<p><b>Price:</b> ${escapeHTML(p.price)}</p>
+<p><b>Location:</b> ${escapeHTML(p.location)}</p>
+<p><b>Area:</b> ${escapeHTML(p.area||"Not specified")}</p>
+<p><b>Bedrooms:</b> ${escapeHTML(p.bedrooms||"Not specified")}</p>
+<p><b>Bathrooms:</b> ${escapeHTML(p.bathrooms||"Not specified")}</p>
+<p><b>Description:</b> ${escapeHTML(p.description||"No description")}</p>
+</div>
+<a class="btn" href="tel:8299742290">Call 8299742290</a>
+</div>`;
+}
+function readFiles(files){
+return Promise.all([...files].map(file=>new Promise((resolve,reject)=>{
+if(file.size>3*1024*1024){reject(new Error("Each photo must be under 3 MB."));return}
+let r=new FileReader();
+r.onload=()=>resolve(r.result);
+r.onerror=reject;
+r.readAsDataURL(file);
+})));
+}
+async function readVideo(file){
+if(!file)return "";
+if(file.size>5*1024*1024)throw new Error("Video must be under 5 MB.");
+return new Promise((resolve,reject)=>{
+let r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file);
+});
+}
+function formObject(form){
+return Object.fromEntries(new FormData(form).entries());
+}
+
+document.getElementById("adminPropertyForm").addEventListener("submit",async e=>{
+e.preventDefault();
+try{
+let f=e.target, d=formObject(f);
+let photos=await readFiles(f.photos.files);
+let video=await readVideo(f.video.files[0]);
+properties.push({...d,images:photos,video,id:Date.now().toString()});
+saveAll();f.reset();renderAdmin();renderProperties();
+alert("Property published successfully!");
+}catch(err){alert(err.message||"Upload failed");}
+});
+
+document.getElementById("sellForm").addEventListener("submit",async e=>{
+e.preventDefault();
+try{
+let f=e.target,d=formObject(f);
+let images=await readFiles(f.photos.files);
+let video=await readVideo(f.video.files[0]);
+properties.push({...d,purpose:"Buy",images,video,id:Date.now().toString(),status:"Pending"});
+saveAll();f.reset();renderProperties();
+alert("Your property details have been submitted for admin review.");
+}catch(err){alert(err.message||"Upload failed");}
+});
+
+document.getElementById("contactForm").addEventListener("submit",e=>{
+e.preventDefault();
+enquiries.push({...formObject(e.target),date:new Date().toLocaleString()});
+saveAll();e.target.reset();
+alert("Your enquiry has been submitted.");
+});
+
+document.getElementById("signupForm").addEventListener("submit",e=>{
+e.preventDefault();
+let d=formObject(e.target);
+if(d.password!==d.confirm){alert("Passwords do not match");return}
+if(users.some(u=>u.email===d.email)){alert("Email already registered");return}
+users.push({name:d.name,phone:d.phone,email:d.email,password:d.password});
+saveAll();e.target.reset();
+alert("Account created successfully. Please login.");
+location.hash="login";
+});
+
+document.getElementById("loginForm").addEventListener("submit",e=>{
+e.preventDefault();
+let d=formObject(e.target);
+let u=users.find(x=>x.email===d.email&&x.password===d.password);
+if(!u){alert("Invalid email or password");return}
+currentUser={name:u.name,email:u.email};
+DB.set("pbe_session",currentUser);
+alert("Welcome "+u.name);
+e.target.reset();
+location.hash="home";
+});
+
+function adminAccess(){
+if(document.getElementById("adminPassword").value!=="Prime@123"){
+alert("Incorrect admin password");return;
+}
+document.getElementById("adminLogin").style.display="none";
+document.getElementById("adminPanel").style.display="block";
+renderAdmin();
+}
+function adminLogout(){
+document.getElementById("adminPanel").style.display="none";
+document.getElementById("adminLogin").style.display="block";
+document.getElementById("adminPassword").value="";
+}
+function renderAdmin(){
+if(!document.getElementById("adminPanel"))return;
+document.getElementById("totalProperties").textContent=properties.length;
+document.getElementById("totalUsers").textContent=users.length;
+document.getElementById("totalEnquiries").textContent=enquiries.length;
+document.getElementById("adminProperties").innerHTML=properties.map(p=>`
+<div class="card"><div class="card-body">
+<h3>${escapeHTML(p.title)}</h3>
+<p>${escapeHTML(p.location)}</p><p>${escapeHTML(p.price)}</p>
+<button class="danger" onclick="deleteProperty('${p.id}')">Delete</button>
+</div></div>`).join("")||"<p>No properties.</p>";
+document.getElementById("adminEnquiries").innerHTML=enquiries.map(x=>`
+<div class="info"><b>${escapeHTML(x.name)}</b><p>${escapeHTML(x.phone)}</p>
+<p>${escapeHTML(x.email)}</p><p>${escapeHTML(x.enquiry)}</p>
+<p>${escapeHTML(x.message)}</p><p>${escapeHTML(x.date)}</p></div>`).join("")||"<p>No enquiries.</p>";
+document.getElementById("adminUsers").innerHTML=users.map(x=>`
+<div class="info"><b>${escapeHTML(x.name)}</b><p>${escapeHTML(x.email)}</p><p>${escapeHTML(x.phone)}</p></div>`).join("")||"<p>No users.</p>";
+}
+function deleteProperty(id){
+if(!confirm("Delete this property?"))return;
+properties=properties.filter(p=>p.id!==id);
+saveAll();renderAdmin();renderProperties();
+}
+</script>
+</body>
+</html>
